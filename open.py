@@ -26,5 +26,5 @@ def start(input_str, application=''):
 			subprocess.call(['start', '', application, input_str])
 	else:
 		if application == '':
-			application = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vender', 'xdg-open')
+			application = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vendor', 'xdg-open')
 		subprocess.call([application, input_str])
