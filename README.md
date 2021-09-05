@@ -34,6 +34,12 @@ open_python.start("https://google.com/")
 open_python.start("https://google.com/", "firefox")	
 ```
 
+## use in command line
+
+```sh
+$ python -m open_python https://google.com/
+```
+
 ## License ##
 
 Copyright (c) 2013 skratchdot  
