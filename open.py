@@ -1,6 +1,7 @@
 # cross-platform version of: os.startfile()
 
 import os, sys, subprocess
+import distutils.spawn
 from six import string_types
 
 def start(input_str, application=''):
@@ -26,5 +27,8 @@ def start(input_str, application=''):
 			subprocess.call(['start', '', application, input_str])
 	else:
 		if application == '':
-			application = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vendor', 'xdg-open')
+			application = distutils.spawn.find_executable("xdg-open") # default to system installation of xdg-open
+			if application is None:
+				raise RuntimeWarning('xdg-open not found, fallback to bundled version')
+				application = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vendor', 'xdg-open')
 		subprocess.call([application, input_str])
