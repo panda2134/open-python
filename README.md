@@ -7,9 +7,11 @@ that object type. Optionally, you can specify an application to use.
 
 This is a proxy for the following commands:
 
+```
         OSX: "open"
     Windows: "start"
 Linux/Other: "xdg-open"
+```
 
 This is a python port of the node.js module:
 https://github.com/pwnall/node-open
